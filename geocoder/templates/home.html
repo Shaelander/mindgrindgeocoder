@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> Shaelander Geocoder </title>
+<head>
+  <link href="../static/main8.css" rel="stylesheet">
+</head>
+  <body>
+    <div class="container">
+      <h1>Mind-Grind Geocoder</h1>
+      <h3>Please upload your CSV file. The values containing addresses should be in a column named Address<br>*Address column in .csv file should start with capital 'A'</h3>
+        <form action="{{url_for('sucess')}}" method="POST" enctype="multipart/form-data">
+          <input type="file" accept=".csv" name="file" />
+          <button type="submit"> Submit </button>
+        </form>
+      <div class="output">
+        {% include btn ignore missing %}
+          {{text|safe}}
+      </div>
+  </div>
+  </body>
+</html>
